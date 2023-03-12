@@ -16,7 +16,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 add_subdirectory(src)
 
-option(BUILD_EXAMPLE "" ON)
+option(BUILD_EXAMPLE "" OFF)
 
 if(BUILD_EXAMPLE)
     message("Bulding examples...")

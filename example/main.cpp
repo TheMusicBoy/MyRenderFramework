@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <mouse_event_handler.hpp>
-#include <controller.hpp>
+#include <RenderFW/mouse_event_handler.hpp>
+#include <RenderFW/controller.hpp>
 #include <thread>
 
 

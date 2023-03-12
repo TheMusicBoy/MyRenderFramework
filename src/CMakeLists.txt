@@ -31,7 +31,7 @@ add_library(mwf_lib STATIC
     ${MY_WINDOW_FRAMEWORK_SOURCES}
 )
 
-target_include_directories(mwf_lib PUBLIC ${INCROOT})
+target_include_directories(mwf_lib PUBLIC ${INCROOT}/../)
 
 target_link_libraries(mwf_lib PUBLIC
     sfml-audio

@@ -1,8 +1,8 @@
 #ifndef _TMB_CONTROLLER_HPP_
 #define _TMB_CONTROLLER_HPP_
 
-#include <impl/render_impl.hpp>
-#include <impl/event_handler.hpp>
+#include <RenderFW/impl/render_impl.hpp>
+#include <RenderFW/impl/event_handler.hpp>
 #include <mutex>
 
 namespace tmb {

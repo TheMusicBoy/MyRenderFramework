@@ -5,9 +5,9 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
-#include <impl/render_object.hpp>
-#include <impl/values.hpp>
-#include <impl/event_handler.hpp>
+#include <RenderFW/impl/render_object.hpp>
+#include <RenderFW/impl/values.hpp>
+#include <RenderFW/impl/event_handler.hpp>
 #include <list>
 #include <memory>
 #include <mutex>

@@ -1,9 +1,9 @@
-#include <impl/render_impl.hpp>
-#include <impl/render_object.hpp>
+#include <RenderFW/impl/render_impl.hpp>
+#include <RenderFW/impl/render_object.hpp>
+#include <RenderFW/window_event_handler.hpp>
 #include <iostream>
 #include <mutex>
 #include <thread>
-#include <window_event_handler.hpp>
 
 namespace tmb {
 
