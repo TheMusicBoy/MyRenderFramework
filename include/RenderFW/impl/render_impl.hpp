@@ -7,6 +7,7 @@
 #include <SFML/Window/WindowStyle.hpp>
 #include <impl/render_object.hpp>
 #include <impl/values.hpp>
+#include <impl/event_handler.hpp>
 #include <list>
 #include <memory>
 #include <mutex>
@@ -21,15 +22,17 @@ class Controller;
 ////////////////////////////////////////////////////////////
 class EventQueue : protected std::list<sf::Event> {
  protected:
+    using Base = std::list<sf::Event>;
+
     std::recursive_mutex lock_;
 
  public:
-    EventQueue()                  = default;
+    EventQueue();
     EventQueue(const EventQueue&) = delete;
-    EventQueue(EventQueue&&)      = default;
-    ~EventQueue()                 = default;
+    EventQueue(EventQueue&&);
+    ~EventQueue();
 
-    EventQueue& operator=(EventQueue&& other) = default;
+    EventQueue& operator=(EventQueue&& other);
 
     bool pollEvent(sf::Event* event);
     void push(const sf::Event& event);
@@ -47,6 +50,8 @@ class Render : public sf::RenderWindow {
 
     RenderMas render_mas_;
     EventQueue event_queue_;
+    UniqueHandlerList handlers_;
+
     std::recursive_mutex event_lock_;
     std::recursive_mutex render_lock_;
 
@@ -77,6 +82,10 @@ class Render : public sf::RenderWindow {
                                   bool visible = true);
 
     void removeRenderObject(const typename RenderList::ObjectPos& iterator);
+
+    void update();
+
+    void getEvents(EventQueue* event_queue);
 
     void render();
 
