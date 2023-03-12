@@ -1,1 +1,1 @@
-project(MyWindowFramework)
+project(MyWindowFrameworkExample)
